@@ -11,7 +11,7 @@ export const authOptions: NextAuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-        })
+        }),
     ],
     // jwt: {
     //     encode: ({secret, token}) => {
@@ -31,7 +31,9 @@ export const authOptions: NextAuthOptions = {
             return session;
       },
       // this code mean the type of user that can sign in, either google user or user who signed up on website and is saved on database
-      async signIn({user}: {user: AdapterUser | User}) {
+      async signIn({user}: {
+        user: AdapterUser | User
+      }) {
         try {
 
             // THE CODE BELOW IS WHAT WILL GET THE CONNECTION TO THE DB FOR EXISITING USER OR CREATE ONE ON THE DB:
