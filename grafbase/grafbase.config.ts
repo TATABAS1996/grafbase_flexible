@@ -1,4 +1,7 @@
-import { g, auth, config } from '@grafbase/sdk'
+import { g, auth, config } from '@grafbase/sdk';
+
+
+//model for requirements a user a project need to put in, this NEEDS TO BE CHANGED WHEN DOING TICKETS
 
 const User = g.model('User', {
   name: g.string().length({min: 2, max: 20 }),
